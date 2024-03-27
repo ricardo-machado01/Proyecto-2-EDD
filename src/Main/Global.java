@@ -6,6 +6,7 @@ import Classes.*;
 import Nodes.*;
 import Trees.*;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import javax.swing.JOptionPane;
 
@@ -17,10 +18,42 @@ public class Global {
     private static CHashtable clients = new CHashtable(1000);
     private static Tree_Reservations reservations = new Tree_Reservations();
     private static Tree_Rooms rooms = new Tree_Rooms();
-    private static String filePathReservations = "/Users/nicolasplanas/Desktop/Proyecto 2/Booking_hotel - reservas.csv/";
-    private static String filePathRooms = "/Users/nicolasplanas/Desktop/Proyecto 2/Booking_hotel - habitaciones.csv";
-    private static String filePathHistoric = "/Users/nicolasplanas/Desktop/Proyecto 2/Booking_hotel - Histórico.csv";
-    private static String filePathStatus = "/Users/nicolasplanas/Desktop/Proyecto 2/Booking_hotel - estado.csv";
+    private static File filePathReservations;
+    private static File filePathRooms;
+    private static File filePathStatus;
+    private static File filePathHistoric;
+
+    public static File getFilePathReservations() {
+        return filePathReservations;
+    }
+
+    public static void setFilePathReservations(File filePathReservations) {
+        Global.filePathReservations = filePathReservations;
+    }
+
+    public static File getFilePathRooms() {
+        return filePathRooms;
+    }
+
+    public static void setFilePathRooms(File filePathRooms) {
+        Global.filePathRooms = filePathRooms;
+    }
+
+    public static File getFilePathStatus() {
+        return filePathStatus;
+    }
+
+    public static void setFilePathStatus(File filePathStatus) {
+        Global.filePathStatus = filePathStatus;
+    }
+
+    public static File getFilePathHistoric() {
+        return filePathHistoric;
+    }
+
+    public static void setFilePathHistoric(File filePathHistoric) {
+        Global.filePathHistoric = filePathHistoric;
+    }
     
     /**
      * Este método lee el documento de tipo 'csv' de las reservaciones, crea instancias
@@ -44,6 +77,7 @@ public class Global {
                 }
                 cont += 1;
             }
+            br.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal...");
         }
@@ -75,7 +109,7 @@ public class Global {
                 }
                 cont += 1;
             }
-
+            br_historic.close();
             while ((line2 = br_historic.readLine()) != null) {
                 Node_Room currentRoom = rooms.getRoot();
 
@@ -94,6 +128,7 @@ public class Global {
                     }
                 cont2 += 1;
             }
+            br_rooms.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal...");
         }
@@ -121,6 +156,7 @@ public class Global {
                     }
                 cont += 1;
                 }
+            br.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal...");
         }

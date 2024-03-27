@@ -68,14 +68,16 @@ public class CHashtable {
      * @param lastname Apellido del Cliente.
      * @return Retorna la información del cliente.
      */
-    public String searchClient(String name, String lastname){
+    public Class_Reservation searchClient(String name, String lastname){
         int index = getHashIndex(name, lastname);
         Node_Reservation_List currentNode = clientTable[index];
-        String searchResult = "";
+        Class_Reservation searchResult =  null;
+        //String searchResult = "";
         
         while (currentNode != null) {
             if (currentNode.getReservation().getClient().getName().equals(name) && currentNode.getReservation().getClient().getLastname().equals(lastname)) {
-                searchResult += currentNode.getReservation().getClient().showInfoStatus() + "Llegada: " + currentNode.getReservation().getArrival();
+                searchResult = currentNode.getReservation();
+                //searchResult += currentNode.getReservation().getClient().showInfoStatus() + "Llegada: " + currentNode.getReservation().getArrival();
             } currentNode = currentNode.getNext();
         }
         return searchResult;
