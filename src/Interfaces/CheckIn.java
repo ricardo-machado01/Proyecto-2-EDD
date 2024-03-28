@@ -7,7 +7,9 @@ package Interfaces;
 
 import Classes.Class_Client;
 import Classes.Class_Reservation;
+import Classes.Class_Room;
 import Main.Global;
+import Nodes.Node_Room;
 import javax.swing.JOptionPane;
 
 /**
@@ -155,7 +157,8 @@ public class CheckIn extends javax.swing.JFrame {
             //resultCheckIn.setText(Global.getClients().searchClient(searchResult.getName(), searchResult.getLastname()));
             Class_Reservation search_result = Global.getClients().searchClient(searchResult.getName(),searchResult.getLastname());
             roomNumber.setText(search_result.getClient().getRoomNumber());
-            floorNumber.setText("falta");
+            Node_Room room = Global.getRooms().search(Integer.parseInt(search_result.getClient().getRoomNumber()), Global.getRooms().getRoot());
+            floorNumber.setText(Integer.toString(room.getRoom().getFloor()));
             ci.setText("");            
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Por favor introduzca un valor numérico");

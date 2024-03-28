@@ -166,7 +166,6 @@ public class HistorialHabitacion extends javax.swing.JFrame {
                     m1.removeRow(0);
                 }
             }
-            
             int num = Integer.parseInt(roomNumber.getText());
             numRoom.setText(roomNumber.getText());
             roomNumber.setText("");

@@ -65,7 +65,8 @@ public class Global {
         int cont = 0;
     
         try {
-            BufferedReader br = new BufferedReader(new FileReader(filePathReservations));
+            String filePath = Global.getFilePathReservations().getAbsolutePath();
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
 
             while ((line = br.readLine()) != null) {
                 if (cont > 0) {
@@ -79,7 +80,7 @@ public class Global {
             }
             br.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal...");
+            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal con su archivo de reservaciones");
         }
     }
 
@@ -96,8 +97,10 @@ public class Global {
         int cont2 = 0;
         
         try {
-            BufferedReader br_historic = new BufferedReader(new FileReader(filePathHistoric));
-            BufferedReader br_rooms = new BufferedReader(new FileReader(filePathRooms));
+            String filePathHis = Global.getFilePathHistoric().getAbsolutePath();
+            String filePathRoo = Global.getFilePathRooms().getAbsolutePath();
+            BufferedReader br_historic = new BufferedReader(new FileReader(filePathHis));
+            BufferedReader br_rooms = new BufferedReader(new FileReader(filePathRoo));
 
             while ((line = br_rooms.readLine()) != null) {
                 List_Clients list = new List_Clients();
@@ -109,7 +112,6 @@ public class Global {
                 }
                 cont += 1;
             }
-            br_historic.close();
             while ((line2 = br_historic.readLine()) != null) {
                 Node_Room currentRoom = rooms.getRoot();
 
@@ -128,9 +130,10 @@ public class Global {
                     }
                 cont2 += 1;
             }
+            br_historic.close();
             br_rooms.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal...");
+            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal con su archivo de historico o de habitaciones");
         }
     }
 
@@ -142,9 +145,9 @@ public class Global {
     public static void cvsReaderHash() {
         String line = "";
         int cont = 0;
-    
         try {
-            BufferedReader br = new BufferedReader(new FileReader("/Users/nicolasplanas/Desktop/Proyecto 2/Booking_hotel - estado.csv"));
+            String filePathStat = Global.getFilePathStatus().getAbsolutePath();
+            BufferedReader br = new BufferedReader(new FileReader(filePathStat));
 
             while ((line = br.readLine()) != null) {
                 if (cont > 0) {
@@ -158,7 +161,7 @@ public class Global {
                 }
             br.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal...");
+            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal con su archivo de estado");
         }
     }
     
