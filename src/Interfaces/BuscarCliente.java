@@ -168,7 +168,7 @@ public class BuscarCliente extends javax.swing.JFrame {
             }
             String nam = name.getText().substring(0, 1).toUpperCase() + name.getText().substring(1).toLowerCase();
             String lastnam = lastname.getText().substring(0, 1).toUpperCase() + lastname.getText().substring(1).toLowerCase();
-            System.out.println(nam+" "+lastnam);
+            //System.out.println(nam+" "+lastnam);
             //Global.getClients().print();
             Class_Reservation search_result = Global.getClients().searchClient(nam, lastnam);
             //String search_result = Global.getClients().searchClient(name.getText(), lastname.getText());

@@ -5,6 +5,10 @@
  */
 package Interfaces;
 
+import Classes.Class_Client;
+import Main.Global;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pjroj
@@ -15,6 +19,10 @@ public class CheckOut extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public CheckOut() {
+        setTitle("CheckOut");
+        setSize(350,360);
+        setResizable(false);
+        this.setLocationRelativeTo(null);
         initComponents();
     }
 
@@ -33,7 +41,10 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         menu2 = new javax.swing.JButton();
         hacerCheckOut = new javax.swing.JButton();
-        JLabel6 = new javax.swing.JLabel();
+        name = new javax.swing.JTextField();
+        JLabel4 = new javax.swing.JLabel();
+        lastname = new javax.swing.JTextField();
+        JLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
 
@@ -65,7 +76,7 @@ public class CheckOut extends javax.swing.JFrame {
                 menu2ActionPerformed(evt);
             }
         });
-        jPanel2.add(menu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 150, 30));
+        jPanel2.add(menu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 150, 30));
 
         hacerCheckOut.setBackground(new java.awt.Color(51, 102, 255));
         hacerCheckOut.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -76,14 +87,30 @@ public class CheckOut extends javax.swing.JFrame {
                 hacerCheckOutActionPerformed(evt);
             }
         });
-        jPanel2.add(hacerCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 150, 30));
+        jPanel2.add(hacerCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 150, 30));
 
-        JLabel6.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        JLabel6.setForeground(new java.awt.Color(51, 51, 51));
-        JLabel6.setText("ver luego como será la interfaz");
-        jPanel2.add(JLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, 20));
+        name.setBackground(new java.awt.Color(255, 255, 255));
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
+            }
+        });
+        jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 210, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 580, 360));
+        JLabel4.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        JLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        JLabel4.setText("Primer nombre:");
+        jPanel2.add(JLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 20));
+
+        lastname.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 210, -1));
+
+        JLabel3.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        JLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        JLabel3.setText("Segundo nombre:");
+        jPanel2.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, 20));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 280, 360));
 
         jPanel4.setBackground(new java.awt.Color(51, 102, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,7 +125,22 @@ public class CheckOut extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void hacerCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hacerCheckOutActionPerformed
-        // TODO add your handling code here:
+        try {
+            String nam = name.getText().substring(0, 1).toUpperCase() + name.getText().substring(1).toLowerCase();
+            String lastnam = lastname.getText().substring(0, 1).toUpperCase() + lastname.getText().substring(1).toLowerCase();
+            Class_Client searchResult = Global.getClients().checkOutClient(nam,lastnam);
+            
+            if (searchResult.getName().equals(nam) && (searchResult.getLastname().equals(lastnam))) {
+                JOptionPane.showMessageDialog(null,"El cliente " + searchResult.getName() + " " + searchResult.getLastname() + " fue añadido al historial de habitación y eliminado de los hospedados con éxito");
+            } else {
+                JOptionPane.showMessageDialog(null, "Cliente no encontrado!");
+            }
+            name.setText("");
+            lastname.setText("");
+           
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Cliente no encontrado!");
+        }
     }//GEN-LAST:event_hacerCheckOutActionPerformed
 
     private void menu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu2ActionPerformed
@@ -106,6 +148,10 @@ public class CheckOut extends javax.swing.JFrame {
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_menu2ActionPerformed
+
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1166,14 +1212,17 @@ public class CheckOut extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLabel6;
+    private javax.swing.JLabel JLabel3;
+    private javax.swing.JLabel JLabel4;
     private javax.swing.JButton hacerCheckOut;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField lastname;
     private javax.swing.JButton menu;
     private javax.swing.JButton menu2;
+    private javax.swing.JTextField name;
     // End of variables declaration//GEN-END:variables
 }

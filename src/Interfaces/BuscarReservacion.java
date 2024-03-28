@@ -7,7 +7,6 @@ package Interfaces;
 
 import Main.Global;
 import Nodes.Node_Reservation;
-import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
