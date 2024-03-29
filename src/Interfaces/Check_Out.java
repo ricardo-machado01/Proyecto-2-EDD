@@ -19,11 +19,11 @@ public class Check_Out extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public Check_Out() {
+        initComponents();
         setTitle("CheckOut");
         setSize(350,360);
         setResizable(false);
         this.setLocationRelativeTo(null);
-        initComponents();
     }
 
     /**
@@ -126,9 +126,11 @@ public class Check_Out extends javax.swing.JFrame {
             String nam = name.getText().substring(0, 1).toUpperCase() + name.getText().substring(1).toLowerCase();
             String lastnam = lastname.getText().substring(0, 1).toUpperCase() + lastname.getText().substring(1).toLowerCase();
             Class_Client searchResult = Global.getClients().checkOutClient(nam,lastnam);
-            
+
             if (searchResult.getName().equals(nam) && (searchResult.getLastname().equals(lastnam))) {
-                JOptionPane.showMessageDialog(null,"El cliente " + searchResult.getName() + " " + searchResult.getLastname() + " fue añadido al historial de habitación y eliminado de los hospedados con éxito");
+                int room_number = Integer.parseInt(searchResult.getRoomNumber());
+                Global.getRooms().setAvailable(room_number);
+                JOptionPane.showMessageDialog(null, "El cliente " + searchResult.getName() + " " + searchResult.getLastname() + " fue añadido al historial de habitación y eliminado de los hospedados con éxito");
             } else {
                 JOptionPane.showMessageDialog(null, "Cliente no encontrado!");
             }

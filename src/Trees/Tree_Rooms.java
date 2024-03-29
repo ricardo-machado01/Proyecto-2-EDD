@@ -1,6 +1,7 @@
 package Trees;
 
 import Classes.Class_Room;
+import Main.Global;
 import Nodes.Node_Room;
 
 /**
@@ -64,6 +65,16 @@ public class Tree_Rooms {
         return result;
     }
 
+    /**
+     * Método para desocupar una habitación.
+     * @param room_number
+     */
+    public void setAvailable(int room_number) {
+        Class_Room room = Global.getRooms().search(room_number, this.getRoot()).getRoom();
+        room.setAvailability(true);
+    }
+    
+    // METODO ARBOL NO DEGENERADO!!!
     /*
     public void addClientH(int[] numRooms, List_Clients clients){
 

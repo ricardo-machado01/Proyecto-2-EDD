@@ -192,7 +192,7 @@ public class Home extends javax.swing.JFrame {
             Global.cvsReaderRoomsHistory();
 
             // SETEAMOS LA VARIABLE DE DISPONIBILIDAD DE LAS HABITACIONES A FALSE.
-            Global.getClients().notAvailableRooms();
+            Global.getClients().setUnavailable();
             
             // CREAMOS LA VENTANA PRINCIPAL.
             Menu menu = new Menu();

@@ -12,7 +12,7 @@ public class Class_Room {
     private String type;
     private int floor;
     private List_Clients clientHistory;
-    private boolean available;
+    private boolean availability;
 
     /**
      * Constructor de la clase Class_Room.
@@ -26,7 +26,7 @@ public class Class_Room {
         this.type = type;
         this.floor = floor;
         this.clientHistory = clientHistory;
-        this.available = true;
+        this.availability = true;
     }
     
     /**
@@ -65,7 +65,7 @@ public class Class_Room {
     }
 
     public boolean getAvailable() {
-        return available;
+        return availability;
     }
     
     // MÉTODOS SET.
@@ -85,7 +85,7 @@ public class Class_Room {
         this.clientHistory = clientHistory;
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public void setAvailability(boolean available) {
+        this.availability = available;
     }
 }

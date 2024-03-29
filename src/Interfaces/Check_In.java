@@ -21,11 +21,11 @@ public class Check_In extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public Check_In() {
+        initComponents();
         setTitle("CheckIn");
         setSize(350,360);
         setResizable(false);
         this.setLocationRelativeTo(null);
-        initComponents();
     }
 
     /**
@@ -160,7 +160,7 @@ public class Check_In extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Por favor introduzca un valor numérico");
         } catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Ups, a ocurrido un error, intente de nuevo");
+            JOptionPane.showMessageDialog(null, "Error! Algo ha salido mal!");
         }
     }//GEN-LAST:event_hacerCheckInActionPerformed
 

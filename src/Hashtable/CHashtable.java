@@ -77,7 +77,7 @@ public class CHashtable {
 
         // BUSCAMOS LA HABITACIÓN QUE ESTÉ DISPONIBLE DEPENDIENDO DEL TIPO QUE DESEE EL CLIENTE.
         Class_Room roomAvailable = Global.getRooms().searchRoomType(roomType, Global.getRooms().getRoot());
-        roomAvailable.setAvailable(false);
+        roomAvailable.setAvailability(false);
 
         // AÑADIMOS EL CLIENTE AL REGISTRO DE ESTADO EN EL HASHTABLE.
         Global.getClients().addClientTable(reservation.getReservation().getClient(), reservation.getReservation().getArrival());
@@ -140,14 +140,14 @@ public class CHashtable {
     /**
      * Método para identificar en el Arbol de habitaciones, las habitaciones OCUPADAS.
      */
-    public void notAvailableRooms(){
-        for (int i = 0; i < clientTable.length-1; i++) {
+    public void setUnavailable() {
+        for (int i = 0; i < clientTable.length - 1; i++) {
             Node_Reservation_List current = clientTable[i];
             while (current != null) {
                 if (current.getReservation().getClient().getRoomNumber() != null) {
                     int numberRoom = Integer.parseInt(current.getReservation().getClient().getRoomNumber());
                     Class_Room room = Global.getRooms().search(numberRoom, Global.getRooms().getRoot()).getRoom();
-                    room.setAvailable(false);
+                    room.setAvailability(false);
                 }
                 current = current.getNext();
             }
