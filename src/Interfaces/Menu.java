@@ -168,41 +168,41 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutActionPerformed
-        CheckOut checkOut = new CheckOut();
+        Check_Out checkOut = new Check_Out();
         checkOut.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_checkOutActionPerformed
 
     private void salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidaActionPerformed
-        //
+        this.dispose();
     }//GEN-LAST:event_salidaActionPerformed
 
     private void cargaArcVentan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaArcVentan1ActionPerformed
-        Inicio inicio = new Inicio();
+        Home inicio = new Home();
         inicio.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cargaArcVentan1ActionPerformed
 
     private void buscarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCliente1ActionPerformed
-        BuscarCliente buscarC = new BuscarCliente();
+        Search_Client buscarC = new Search_Client();
         buscarC.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buscarCliente1ActionPerformed
 
     private void busquedaReservac1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaReservac1ActionPerformed
-        BuscarReservacion buscarR =  new BuscarReservacion();
+        Search_Reservation buscarR =  new Search_Reservation();
         buscarR.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_busquedaReservac1ActionPerformed
 
     private void historialReservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historialReservActionPerformed
-        HistorialHabitacion histHab =  new HistorialHabitacion();
+        Historic_Room histHab =  new Historic_Room();
         histHab.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_historialReservActionPerformed
 
     private void checkIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkIn1ActionPerformed
-        CheckIn checkIn = new CheckIn();
+        Check_In checkIn = new Check_In();
         checkIn.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_checkIn1ActionPerformed
@@ -232,13 +232,6 @@ public class Menu extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

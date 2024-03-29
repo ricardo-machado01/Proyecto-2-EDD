@@ -23,38 +23,6 @@ public class Global {
     private static File filePathStatus;
     private static File filePathHistoric;
 
-    public static File getFilePathReservations() {
-        return filePathReservations;
-    }
-
-    public static void setFilePathReservations(File filePathReservations) {
-        Global.filePathReservations = filePathReservations;
-    }
-
-    public static File getFilePathRooms() {
-        return filePathRooms;
-    }
-
-    public static void setFilePathRooms(File filePathRooms) {
-        Global.filePathRooms = filePathRooms;
-    }
-
-    public static File getFilePathStatus() {
-        return filePathStatus;
-    }
-
-    public static void setFilePathStatus(File filePathStatus) {
-        Global.filePathStatus = filePathStatus;
-    }
-
-    public static File getFilePathHistoric() {
-        return filePathHistoric;
-    }
-
-    public static void setFilePathHistoric(File filePathHistoric) {
-        Global.filePathHistoric = filePathHistoric;
-    }
-    
     /**
      * Este método lee el documento de tipo 'csv' de las reservaciones, crea instancias
      * de tipo 'Class_Client' y 'Class_Reservation' las cuales guarda dentro de un nodo
@@ -161,7 +129,7 @@ public class Global {
                 }
             br.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal con su archivo de estado");
+            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal");
         }
     }
     
@@ -194,5 +162,38 @@ public class Global {
 
     public static CHashtable getClients() {
         return clients;
+    }
+    
+    public static File getFilePathReservations() {
+        return filePathReservations;
+    }
+    
+    public static File getFilePathRooms() {
+        return filePathRooms;
+    }
+    
+    public static File getFilePathHistoric() {
+        return filePathHistoric;
+    }
+
+    public static File getFilePathStatus() {
+        return filePathStatus;
+    }
+    
+    // MÉTODOS SET.
+    public static void setFilePathReservations(File filePathReservations) {
+        Global.filePathReservations = filePathReservations;
+    }
+
+    public static void setFilePathRooms(File filePathRooms) {
+        Global.filePathRooms = filePathRooms;
+    }
+
+    public static void setFilePathStatus(File filePathStatus) {
+        Global.filePathStatus = filePathStatus;
+    }
+
+    public static void setFilePathHistoric(File filePathHistoric) {
+        Global.filePathHistoric = filePathHistoric;
     }
 }

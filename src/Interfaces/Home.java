@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
 import Main.Global;
@@ -14,18 +9,17 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author pjroj
  */
-public class Inicio extends javax.swing.JFrame {
+public class Home extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu
      */
-    public Inicio() {
+    public Home() {
         setTitle("Inicio");
         setSize(880, 370);
         setResizable(false);
         this.setLocationRelativeTo(null);
         initComponents();
-    
     }
 
     /**
@@ -185,29 +179,29 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_cargaEstadoActionPerformed
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        if (FileIsEmpty()){
+        if (FileIsEmpty()) {
             //SE MUESTRA UN MENSAJE DE ERROR EN CASO DE QUE NO SE HAYA SELECCIONADO NINGUN ARCHIVO
-            JOptionPane.showMessageDialog(null, "Debe seleccionar los archivos primero");
-        }else{
+           JOptionPane.showMessageDialog(null, "Debe seleccionar los archivos primero");
+        } else {
             try {
-            //Cargamos los hash tables.
+            // CARGAMOS LOS HASH TABLES.
             Global.cvsReaderHash();
-            
-            // Cargamos los datos y creamos los arboles.
+
+            // CARGAMOS LOS ARBOLES.
             Global.cvsReaderReservations();
             Global.cvsReaderRoomsHistory();
 
-            //Convertimos a False a las habitaciones que no se encuentra disponibles.
+            // SETEAMOS LA VARIABLE DE DISPONIBILIDAD DE LAS HABITACIONES A FALSE.
             Global.getClients().notAvailableRooms();
-            // Creamos la ventana principal.
-            Menu menu= new Menu();
+            
+            // CREAMOS LA VENTANA PRINCIPAL.
+            Menu menu = new Menu();
             menu.setVisible(true);
             this.dispose();
-            
-            }catch(Exception e){
+
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal...verifica");
             }
-            
         }
     }//GEN-LAST:event_menuActionPerformed
 
@@ -268,23 +262,21 @@ public class Inicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio().setVisible(true);
+                new Home().setVisible(true);
             }
         });
     }

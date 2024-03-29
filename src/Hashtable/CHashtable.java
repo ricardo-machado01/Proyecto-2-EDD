@@ -1,9 +1,9 @@
 package Hashtable;
 
+import Main.Global;
 import Classes.Class_Client;
 import Classes.Class_Reservation;
 import Classes.Class_Room;
-import Main.Global;
 import Nodes.Node_Client;
 import Nodes.Node_Reservation;
 import Nodes.Node_Reservation_List;
@@ -142,13 +142,14 @@ public class CHashtable {
      */
     public void notAvailableRooms(){
         for (int i = 0; i < clientTable.length-1; i++) {
-            while(clientTable[i] != null){
-                if(clientTable[i].getReservation().getClient().getRoomNumber() != null){
-                    int numberRoom = Integer.parseInt(clientTable[i].getReservation().getClient().getRoomNumber());
+            Node_Reservation_List current = clientTable[i];
+            while (current != null) {
+                if (current.getReservation().getClient().getRoomNumber() != null) {
+                    int numberRoom = Integer.parseInt(current.getReservation().getClient().getRoomNumber());
                     Class_Room room = Global.getRooms().search(numberRoom, Global.getRooms().getRoot()).getRoom();
                     room.setAvailable(false);
                 }
-                clientTable[i] = clientTable[i].getNext();
+                current = current.getNext();
             }
         }
     }
@@ -159,7 +160,7 @@ public class CHashtable {
      * @param lastname Apellido del Cliente.
      * @return Retorna la información del cliente.
      */
-    public Class_Reservation searchClient(String name, String lastname){
+    public Class_Reservation searchClient(String name, String lastname) {
         
         int index = getHashIndex(name, lastname);
         Node_Reservation_List currentNode = clientTable[index];

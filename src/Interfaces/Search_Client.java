@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
-import Classes.Class_Reservation;
 import Main.Global;
+import Classes.Class_Reservation;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,31 +9,34 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author pjroj
  */
-public class BuscarCliente extends javax.swing.JFrame {
+public class Search_Client extends javax.swing.JFrame {
     DefaultTableModel m1 = new DefaultTableModel();
+    
     /**
-     * Creates new form Menu
+     * Método constructor de la clase.
      */
-    public BuscarCliente() {
+    public Search_Client() {
         setTitle("Buscar Cliente");
         setSize(1120, 460);
         setResizable(false);
         this.setLocationRelativeTo(null);
         initComponents();
-        //los atributos de las columnas
+        
+        // LOS ATRIBUTOS DE LAS COLUMNAS.
         String ids[] = {"Habitación","Nombre","Apellido","Email","Género","Teléfono","Llegada del Cliente"};
-        //se setteat los atributos a la tabla
+        
+        // SETEAMOS LOS ATRIBUTOS DE LA TABLA.
         m1.setColumnIdentifiers(ids);
         jTable1.setModel(m1);
-        //se define el tamaño de las celdas
+        
+        // DEFINIMOS EL TAMAÑO DE LAS CELDAS.
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(180);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
         jTable1.getColumnModel().getColumn(2).setPreferredWidth(200);
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(300);
         jTable1.getColumnModel().getColumn(4).setPreferredWidth(120);
         jTable1.getColumnModel().getColumn(5).setPreferredWidth(300);
-        jTable1.getColumnModel().getColumn(6).setPreferredWidth(200);
-        
+        jTable1.getColumnModel().getColumn(6).setPreferredWidth(200);  
     }
 
     /**
@@ -88,11 +86,8 @@ public class BuscarCliente extends javax.swing.JFrame {
         JLabel3.setForeground(new java.awt.Color(51, 51, 51));
         JLabel3.setText("Segundo nombre:");
         jPanel2.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, 20));
-
-        lastname.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 210, -1));
 
-        name.setBackground(new java.awt.Color(255, 255, 255));
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
@@ -127,7 +122,6 @@ public class BuscarCliente extends javax.swing.JFrame {
         JLabel4.setText("Primer nombre:");
         jPanel2.add(JLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 20));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -160,16 +154,15 @@ public class BuscarCliente extends javax.swing.JFrame {
     private void buscarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarclienteActionPerformed
         
         try {
-            //Se reinicia la tabla de busqueda si ya se buscó anteriormente alguna reservación
-            if(m1.getRowCount()!= 0){
-                while(m1.getRowCount() != 0){
+            // Se reinicia la tabla de busqueda si ya se buscó anteriormente alguna reservación.
+            if (m1.getRowCount() != 0) {
+                while (m1.getRowCount() != 0){
                     m1.removeRow(0);
                 }
             }
+
             String nam = name.getText().substring(0, 1).toUpperCase() + name.getText().substring(1).toLowerCase();
             String lastnam = lastname.getText().substring(0, 1).toUpperCase() + lastname.getText().substring(1).toLowerCase();
-            //System.out.println(nam+" "+lastnam);
-            //Global.getClients().print();
             Class_Reservation search_result = Global.getClients().searchClient(nam, lastnam);
             //String search_result = Global.getClients().searchClient(name.getText(), lastname.getText());
             //System.out.println("retorna:"+search_result);
@@ -185,7 +178,7 @@ public class BuscarCliente extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "¡Cliente no encontrado!");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error, Por favor intente nuevamente");
+            JOptionPane.showMessageDialog(null, "Error! Búsqueda fallida!");
         }
     }//GEN-LAST:event_buscarclienteActionPerformed
 
@@ -216,83 +209,21 @@ public class BuscarCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BuscarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Search_Client.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BuscarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Search_Client.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BuscarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Search_Client.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BuscarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Search_Client.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuscarCliente().setVisible(true);
+                new Search_Client().setVisible(true);
             }
         });
     }
