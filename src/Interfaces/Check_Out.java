@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Classes.Class_Client;
+import Classes.Class_Reservation;
 import Main.Global;
 import javax.swing.JOptionPane;
 
@@ -124,12 +125,28 @@ public class Check_Out extends javax.swing.JFrame {
         try {
             String nam = name.getText().substring(0, 1).toUpperCase() + name.getText().substring(1).toLowerCase();
             String lastnam = lastname.getText().substring(0, 1).toUpperCase() + lastname.getText().substring(1).toLowerCase();
+            //Se busca el cliente para obtener, si tiene, sus compañeros de cuarto (roommates)
+            Class_Reservation client = Global.getClients().searchClient(nam, lastnam);
+            //Para realizar el Check Out del cliente escrito por el usuario
             Class_Client searchResult = Global.getClients().checkOutClient(nam,lastnam);
-
+            
             if (searchResult.getName().equals(nam) && (searchResult.getLastname().equals(lastnam))) {
+                //Si se logró con exitó el Check Out del usuario se pasa a hacer Check out de sus compañeros de cuarto
+                if(client.getClient().getRoommate() != null){
+                    String[] roommates = client.getClient().getRoommate().split(",");
+                    for (int i = 0; i < roommates.length; i++) {
+                        String[] mate = roommates[i].split(" ");
+                        Class_Client result = Global.getClients().checkOutClient(mate[0],mate[1]);
+                    }
+                }
+                //se cambia el estado de la habitación a desocupado
                 int room_number = Integer.parseInt(searchResult.getRoomNumber());
                 Global.getRooms().setAvailable(room_number);
-                JOptionPane.showMessageDialog(null, "El cliente " + searchResult.getName() + " " + searchResult.getLastname() + " fue añadido al historial de habitación y eliminado de los hospedados con éxito");
+                if(client.getClient().getRoommate() != null){
+                    JOptionPane.showMessageDialog(null, "El cliente " + searchResult.getName() + " " + searchResult.getLastname() + " fue añadido al historial de habitación y eliminado de los hospedados con éxito junto a sus compañeros de cuarto");
+                }else{
+                    JOptionPane.showMessageDialog(null, "El cliente " + searchResult.getName() + " " + searchResult.getLastname() + " fue añadido al historial de habitación y eliminado de los hospedados con éxito");
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "Cliente no encontrado!");
             }

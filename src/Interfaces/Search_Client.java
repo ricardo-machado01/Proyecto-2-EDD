@@ -161,17 +161,14 @@ public class Search_Client extends javax.swing.JFrame {
 
             String nam = name.getText().substring(0, 1).toUpperCase() + name.getText().substring(1).toLowerCase();
             String lastnam = lastname.getText().substring(0, 1).toUpperCase() + lastname.getText().substring(1).toLowerCase();
+            //se busca al cliente
             Class_Reservation search_result = Global.getClients().searchClient(nam, lastnam);
-            //String search_result = Global.getClients().searchClient(name.getText(), lastname.getText());
-            //System.out.println("retorna:"+search_result);
-            //se retorna nuevamente a vacio los inputs
+            
             name.setText("");
             lastname.setText("");
 
             if (!"".equals(search_result)) {
-                m1.addRow(new Object[]{search_result.getClient().getRoomNumber(),search_result.getClient().getName(),search_result.getClient().getLastname(),search_result.getClient().getEmail(),search_result.getClient().getPhone(),search_result.getClient().getGender(),search_result.getArrival()});
-                //output.setText("INFORMACIÓN DEL CLIENTE:\n\n" + search_result.getClient().getName()+","+search_result.getClient().getLastname()+","+search_result.getClient().getRoomNumber());
-
+                m1.addRow(new Object[]{search_result.getClient().getRoomNumber(),search_result.getClient().getName(),search_result.getClient().getLastname(),search_result.getClient().getEmail(),search_result.getClient().getGender(),search_result.getClient().getPhone(),search_result.getArrival()});
             } else {
                 JOptionPane.showMessageDialog(null, "¡Cliente no encontrado!");
             }

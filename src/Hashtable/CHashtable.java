@@ -184,4 +184,24 @@ public class CHashtable {
     public int getCapacity() {
         return capacity;
     }
+    
+    /**
+     * Este método para imprimir el hashtable (solo para pruebas)
+     * @return Retorna la información de los clientes.
+     */
+    public void print(){
+        for(int i = 0;i < getCapacity();i++){
+            //recibo un node que es la cabeza de un linkedList
+            Node_Reservation_List node = getClientTable()[i];
+            //System.out.println(node == null);
+            if(node != null){
+                System.out.println("index:"+i);
+                while(node!= null){
+                    Class_Reservation client = node.getReservation();
+                    System.out.println("[ "+client.getClient().getRoomNumber()+","+client.getClient().getName()+","+client.getClient().getLastname()+",roommates: "+client.getClient().getRoommate()+" ]");
+                    node = node.getNext();
+                }
+            }
+        }
+    }
 }

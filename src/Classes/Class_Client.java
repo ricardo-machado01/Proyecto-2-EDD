@@ -12,6 +12,7 @@ public class Class_Client {
     private String gender;
     private String phone;
     private String room_number;
+    private String roommate;
 
     /**
      * Constructor de la clase Class_Client.
@@ -22,8 +23,9 @@ public class Class_Client {
      * @param gender Sexo del Cliente.
      * @param phone Número de telefono del cliente.
      * @param room_number Número de habitación del cliente.
+     * @param roommate Compañeros de habitación del cliente.
      */
-    public Class_Client(String id, String name, String lastname, String email, String gender, String phone, String room_number) {
+    public Class_Client(String id, String name, String lastname, String email, String gender, String phone, String room_number, String roommate) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
@@ -90,6 +92,10 @@ public class Class_Client {
         return room_number;
     }
     
+    public String getRoommate() {
+        return roommate;
+    }
+    
     // MÉTODOS SET.
     public void setId(String id) {
         this.id = id;
@@ -117,5 +123,9 @@ public class Class_Client {
     
     public void setRoomNumber(String room_number) {
         this.room_number = room_number;
+    }
+
+    public void setRoommate(String roommate) {
+        this.roommate = roommate;
     }
 }

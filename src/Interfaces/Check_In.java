@@ -146,9 +146,8 @@ public class Check_In extends javax.swing.JFrame {
         try {
             // BUSCAMOS AL CLIENTE.
             int id = Integer.parseInt(ci.getText());
+            //se busca una habiación que este disponible al cliente
             Class_Client searchResult = Global.getClients().checkInClient(id);
-            
-            //resultCheckIn.setText(Global.getClients().searchClient(searchResult.getName(), searchResult.getLastname()));
             Class_Reservation search_result = Global.getClients().searchClient(searchResult.getName(),searchResult.getLastname());
             roomNumber.setText(search_result.getClient().getRoomNumber());
             Node_Room room = Global.getRooms().search(Integer.parseInt(search_result.getClient().getRoomNumber()), Global.getRooms().getRoot());

@@ -166,7 +166,6 @@ public class Historic_Room extends javax.swing.JFrame {
                     m1.removeRow(0);
                 }
             }
-            
             int num = Integer.parseInt(roomNumber.getText());
             
             if (num >= 1 && num <= 300) {
@@ -177,10 +176,14 @@ public class Historic_Room extends javax.swing.JFrame {
             //Se busca la habitación en el arbol de historial
             Node_Room room = Global.getRooms().search(num, Global.getRooms().getRoot());
             
-            //Si existe el nodo encontrado se le busca su historial de cleintes que se hospedaron 
+            //Si existe el nodo encontrado se le busca su historial de clientes que se hospedaron 
             Node_Client aux = room.getRoom().getClientHistory().getHead();
             while (aux != null) {
-                m1.addRow(new Object[]{aux.getClient().getId(),aux.getClient().getName(),aux.getClient().getLastname(),aux.getClient().getEmail(),aux.getClient().getGender(),"falta info"});
+                if(aux.getClient().getId() == null){
+                    m1.addRow(new Object[]{" - ",aux.getClient().getName(),aux.getClient().getLastname(),aux.getClient().getEmail(),aux.getClient().getGender(),"falta info"});
+                }else{
+                   m1.addRow(new Object[]{aux.getClient().getId(),aux.getClient().getName(),aux.getClient().getLastname(),aux.getClient().getEmail(),aux.getClient().getGender(),"falta info"});
+                }
                 aux = aux.getNext();
             }
         } catch (Exception e) {
