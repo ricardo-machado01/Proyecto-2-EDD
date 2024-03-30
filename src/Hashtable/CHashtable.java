@@ -86,7 +86,7 @@ public class CHashtable {
         reservation.getReservation().getClient().setRoomNumber(Integer.toString(roomAvailable.getNumber()));
 
         // EN EL ARBOL RESERVACIONES ELIMINAMOS LA RESERVACIÓN DEL CLIENTE.
-        Global.getReservations().delete(id, Global.getReservations().getRoot(), null);
+        Global.getReservations().deleteNode(id, Global.getReservations().getRoot(), null);
         
         return reservation.getReservation().getClient();
     }

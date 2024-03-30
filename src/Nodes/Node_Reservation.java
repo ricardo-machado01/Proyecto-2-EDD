@@ -64,16 +64,34 @@ public class Node_Reservation {
      * Método para saber si solo tiene hijo izquierdo.
      * @return retorna true si tiene hijo izquierdo.
      */
-    public boolean hasLeftSon() {
-        return getLeft() != null;
+    public boolean hasOnlyLeftSon() {
+        return this.left != null && 
+            this.right == null; 
     }
 
     /**
      * Método para saber si solo tiene hijo derecho.
      * @return retorna true si tiene hijo derecho.
      */
+    public boolean hasOnlyRightSon() {
+        return this.left == null && 
+            this.right != null; 
+    }
+
+    /**
+     * Método para saber si tiene hijo izquierdo.
+     * @return retorna true si tiene hijo izquierdo.
+     */
+    public boolean hasLeftSon() {
+        return this.left != null;
+    }
+
+    /**
+     * Método para saber si tiene hijo derecho.
+     * @return retorna true si tiene hijo derecho.
+     */
     public boolean hasRightSon() {
-        return getRight() != null;
+        return this.right != null;
     }
 
     //MÉTODOS GET

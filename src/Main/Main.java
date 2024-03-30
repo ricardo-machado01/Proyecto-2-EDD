@@ -9,9 +9,19 @@ import Interfaces.*;
 public class Main {
 
     public static void main(String[] args) {
+        
+        // CARGAMOS LOS HASH TABLES.
+        Global.cvsReaderHash();
 
-        // Se inicia el programa.
-        Home home_page = new Home();
-        home_page.setVisible(true);
+        // CARGAMOS LOS ARBOLES.
+        Global.cvsReaderReservations();
+        Global.cvsReaderRoomsHistory();
+
+        // SETEAMOS LA VARIABLE DE DISPONIBILIDAD DE LAS HABITACIONES A FALSE.
+        Global.getClients().setUnavailable();
+
+        // CREAMOS LA VENTANA PRINCIPAL.
+        Menu menu = new Menu();
+        menu.setVisible(true);
     }
 }

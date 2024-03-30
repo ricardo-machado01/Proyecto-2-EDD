@@ -21,7 +21,6 @@ public class Check_Out extends javax.swing.JFrame {
     public Check_Out() {
         initComponents();
         setTitle("CheckOut");
-        setSize(350,360);
         setResizable(false);
         this.setLocationRelativeTo(null);
     }
@@ -37,16 +36,15 @@ public class Check_Out extends javax.swing.JFrame {
 
         menu = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        menu2 = new javax.swing.JButton();
-        hacerCheckOut = new javax.swing.JButton();
         name = new javax.swing.JTextField();
         JLabel4 = new javax.swing.JLabel();
-        lastname = new javax.swing.JTextField();
         JLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        lastname = new javax.swing.JTextField();
+        check_in_btn = new javax.swing.JButton();
+        back_to_menu_btn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         menu.setBackground(new java.awt.Color(0, 51, 102));
         menu.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -54,74 +52,75 @@ public class Check_Out extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(600, 378));
+        setPreferredSize(new java.awt.Dimension(600, 37));
+        setSize(new java.awt.Dimension(600, 378));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 75, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, -1));
 
-        jLabel4.setFont(new java.awt.Font("Vivaldi", 3, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Check-out");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        menu2.setBackground(new java.awt.Color(51, 102, 255));
-        menu2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        menu2.setText("Ir al menú");
-        menu2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        menu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menu2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(menu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 150, 30));
-
-        hacerCheckOut.setBackground(new java.awt.Color(51, 102, 255));
-        hacerCheckOut.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        hacerCheckOut.setText("Realizar Check-Out");
-        hacerCheckOut.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        hacerCheckOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hacerCheckOutActionPerformed(evt);
-            }
-        });
-        jPanel2.add(hacerCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 150, 30));
+        jLabel4.setFont(new java.awt.Font("Kubo Sans", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(75, 25, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("CHECK-OUT");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 560, -1));
 
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
             }
         });
-        jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 210, -1));
+        getContentPane().add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 210, -1));
 
-        JLabel4.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        JLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        JLabel4.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        JLabel4.setForeground(new java.awt.Color(75, 25, 0));
         JLabel4.setText("Primer nombre:");
-        jPanel2.add(JLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 20));
-        jPanel2.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 210, -1));
+        getContentPane().add(JLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, 20));
 
-        JLabel3.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        JLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        JLabel3.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        JLabel3.setForeground(new java.awt.Color(75, 25, 0));
         JLabel3.setText("Segundo nombre:");
-        jPanel2.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, 20));
+        getContentPane().add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, 20));
+        getContentPane().add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 210, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 280, 360));
+        check_in_btn.setBackground(new java.awt.Color(75, 25, 0));
+        check_in_btn.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        check_in_btn.setForeground(new java.awt.Color(255, 248, 231));
+        check_in_btn.setText("Aceptar");
+        check_in_btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        check_in_btn.setOpaque(true);
+        check_in_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                check_in_btnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(check_in_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 80, 30));
 
-        jPanel4.setBackground(new java.awt.Color(51, 102, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        back_to_menu_btn.setBackground(new java.awt.Color(75, 25, 0));
+        back_to_menu_btn.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        back_to_menu_btn.setForeground(new java.awt.Color(255, 248, 231));
+        back_to_menu_btn.setText("Volver al menú");
+        back_to_menu_btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        back_to_menu_btn.setOpaque(true);
+        back_to_menu_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_to_menu_btnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(back_to_menu_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 130, 30));
 
-        jPanel3.setBackground(new java.awt.Color(0, 51, 153));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 40, 360));
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Window_Check_Out.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void hacerCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hacerCheckOutActionPerformed
+    private void check_in_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_check_in_btnActionPerformed
         try {
             String nam = name.getText().substring(0, 1).toUpperCase() + name.getText().substring(1).toLowerCase();
             String lastnam = lastname.getText().substring(0, 1).toUpperCase() + lastname.getText().substring(1).toLowerCase();
@@ -140,13 +139,13 @@ public class Check_Out extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Cliente no encontrado!");
         }
-    }//GEN-LAST:event_hacerCheckOutActionPerformed
+    }//GEN-LAST:event_check_in_btnActionPerformed
 
-    private void menu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu2ActionPerformed
+    private void back_to_menu_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_to_menu_btnActionPerformed
         Menu menu = new Menu();
         menu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_menu2ActionPerformed
+    }//GEN-LAST:event_back_to_menu_btnActionPerformed
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
@@ -178,7 +177,6 @@ public class Check_Out extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Check_Out.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -191,15 +189,14 @@ public class Check_Out extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabel3;
     private javax.swing.JLabel JLabel4;
-    private javax.swing.JButton hacerCheckOut;
+    private javax.swing.JButton back_to_menu_btn;
+    private javax.swing.JButton check_in_btn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField lastname;
     private javax.swing.JButton menu;
-    private javax.swing.JButton menu2;
     private javax.swing.JTextField name;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,11 +15,10 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public Menu() {
+        initComponents();
         setTitle("Menú");
-        setSize(560, 510);
         setResizable(false);
         this.setLocationRelativeTo(null);
-        initComponents();
     }
 
     /**
@@ -31,181 +30,198 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         salida = new javax.swing.JButton();
-        checkOut = new javax.swing.JButton();
+        search_room_history_btn = new javax.swing.JButton();
+        search_client_btn = new javax.swing.JButton();
+        search_reservation_btn = new javax.swing.JButton();
+        check_in_btn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        cargaArcVentan1 = new javax.swing.JButton();
-        buscarCliente1 = new javax.swing.JButton();
-        busquedaReservac1 = new javax.swing.JButton();
-        historialReserv = new javax.swing.JButton();
-        checkIn1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        imagen = new javax.swing.JLabel();
-        imagen1 = new javax.swing.JLabel();
+        check_out_btn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setBounds(new java.awt.Rectangle(0, 0, 800, 510));
+        setMinimumSize(new java.awt.Dimension(800, 510));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 75, -1, -1));
+        jLabel6.setFont(new java.awt.Font("Kubo Sans", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 248, 231));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("-HOTEL-");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 170, -1));
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        salida.setBackground(new java.awt.Color(51, 102, 255));
-        salida.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        salida.setBackground(new java.awt.Color(255, 0, 51));
+        salida.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        salida.setForeground(new java.awt.Color(255, 255, 255));
         salida.setText("Salir");
-        salida.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        salida.setAlignmentY(0.0F);
+        salida.setBorder(null);
+        salida.setOpaque(true);
         salida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salidaActionPerformed(evt);
             }
         });
-        jPanel2.add(salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 150, 30));
+        getContentPane().add(salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 70, 30));
 
-        checkOut.setBackground(new java.awt.Color(51, 102, 255));
-        checkOut.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        checkOut.setText("Check-Out");
-        checkOut.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        checkOut.addActionListener(new java.awt.event.ActionListener() {
+        search_room_history_btn.setBackground(new java.awt.Color(255, 248, 231));
+        search_room_history_btn.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        search_room_history_btn.setForeground(new java.awt.Color(75, 25, 0));
+        search_room_history_btn.setText("Historial de Habitación");
+        search_room_history_btn.setAlignmentY(0.0F);
+        search_room_history_btn.setBorder(null);
+        search_room_history_btn.setOpaque(true);
+        search_room_history_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkOutActionPerformed(evt);
+                search_room_history_btnActionPerformed(evt);
             }
         });
-        jPanel2.add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 230, 40));
+        getContentPane().add(search_room_history_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 210, 40));
 
-        jLabel2.setFont(new java.awt.Font("Vivaldi", 3, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Menu");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Vivaldi", 3, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Reception");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
-
-        cargaArcVentan1.setBackground(new java.awt.Color(51, 102, 255));
-        cargaArcVentan1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        cargaArcVentan1.setText("Cargar archivos nuevamente");
-        cargaArcVentan1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        cargaArcVentan1.addActionListener(new java.awt.event.ActionListener() {
+        search_client_btn.setBackground(new java.awt.Color(255, 248, 231));
+        search_client_btn.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        search_client_btn.setForeground(new java.awt.Color(75, 25, 0));
+        search_client_btn.setText("Buscar Cliente");
+        search_client_btn.setAlignmentY(0.0F);
+        search_client_btn.setBorder(null);
+        search_client_btn.setBorderPainted(false);
+        search_client_btn.setOpaque(true);
+        search_client_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cargaArcVentan1ActionPerformed(evt);
+                search_client_btnActionPerformed(evt);
             }
         });
-        jPanel2.add(cargaArcVentan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 230, 40));
+        getContentPane().add(search_client_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 210, 40));
 
-        buscarCliente1.setBackground(new java.awt.Color(51, 102, 255));
-        buscarCliente1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        buscarCliente1.setText("Buscar Cliente");
-        buscarCliente1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buscarCliente1.addActionListener(new java.awt.event.ActionListener() {
+        search_reservation_btn.setBackground(new java.awt.Color(255, 248, 231));
+        search_reservation_btn.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        search_reservation_btn.setForeground(new java.awt.Color(75, 25, 0));
+        search_reservation_btn.setText("Buscar Reservación");
+        search_reservation_btn.setAlignmentY(0.0F);
+        search_reservation_btn.setBorder(null);
+        search_reservation_btn.setOpaque(true);
+        search_reservation_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarCliente1ActionPerformed(evt);
+                search_reservation_btnActionPerformed(evt);
             }
         });
-        jPanel2.add(buscarCliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 230, 40));
+        getContentPane().add(search_reservation_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 210, 40));
 
-        busquedaReservac1.setBackground(new java.awt.Color(51, 102, 255));
-        busquedaReservac1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        busquedaReservac1.setText("Busqueda de Reservación");
-        busquedaReservac1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        busquedaReservac1.addActionListener(new java.awt.event.ActionListener() {
+        check_in_btn.setBackground(new java.awt.Color(255, 248, 231));
+        check_in_btn.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        check_in_btn.setForeground(new java.awt.Color(75, 25, 0));
+        check_in_btn.setText("Check-In");
+        check_in_btn.setAlignmentY(0.0F);
+        check_in_btn.setBorder(null);
+        check_in_btn.setOpaque(true);
+        check_in_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                busquedaReservac1ActionPerformed(evt);
+                check_in_btnActionPerformed(evt);
             }
         });
-        jPanel2.add(busquedaReservac1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 230, 40));
+        getContentPane().add(check_in_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 210, 40));
 
-        historialReserv.setBackground(new java.awt.Color(51, 102, 255));
-        historialReserv.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        historialReserv.setText("Historial de Habitación");
-        historialReserv.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        historialReserv.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                historialReservActionPerformed(evt);
-            }
-        });
-        jPanel2.add(historialReserv, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 230, 40));
+        jLabel2.setBackground(new java.awt.Color(255, 248, 231));
+        jLabel2.setFont(new java.awt.Font("Kubo Sans", 1, 38)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 248, 231));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("TERRAVILA");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 370, -1));
 
-        checkIn1.setBackground(new java.awt.Color(51, 102, 255));
-        checkIn1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        checkIn1.setText("Check-In");
-        checkIn1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        checkIn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkIn1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(checkIn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 230, 40));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 310, 510));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 75, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(51, 102, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 0, -1, 510));
 
         jPanel3.setBackground(new java.awt.Color(0, 51, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, -1, 510));
 
-        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/hotel5.png"))); // NOI18N
-        imagen.setPreferredSize(new java.awt.Dimension(106, 102));
-        jPanel3.add(imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(-210, 0, 390, 500));
+        check_out_btn.setBackground(new java.awt.Color(255, 248, 231));
+        check_out_btn.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        check_out_btn.setForeground(new java.awt.Color(75, 25, 0));
+        check_out_btn.setText("Check-Out");
+        check_out_btn.setAlignmentY(0.0F);
+        check_out_btn.setBorder(null);
+        check_out_btn.setOpaque(true);
+        check_out_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                check_out_btnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(check_out_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, 210, 40));
 
-        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 180, 510));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu-Window.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
-        imagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/hotel5.png"))); // NOI18N
-        imagen1.setPreferredSize(new java.awt.Dimension(106, 102));
-        jPanel4.add(imagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, 0, 210, 500));
+        jLabel3.setBackground(new java.awt.Color(255, 248, 231));
+        jLabel3.setFont(new java.awt.Font("Baskerville", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 248, 231));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("TERRAVILA");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 290, -1));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 510));
+        jLabel4.setBackground(new java.awt.Color(255, 248, 231));
+        jLabel4.setFont(new java.awt.Font("Baskerville", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 248, 231));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("TERRAVILA");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 290, -1));
+
+        jLabel5.setBackground(new java.awt.Color(255, 248, 231));
+        jLabel5.setFont(new java.awt.Font("Baskerville", 1, 48)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 248, 231));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("TERRAVILA");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutActionPerformed
-        Check_Out checkOut = new Check_Out();
-        checkOut.setVisible(true);
+    private void search_client_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_client_btnActionPerformed
+        Search_Client window_2 = new Search_Client();
+        window_2.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_checkOutActionPerformed
+    }//GEN-LAST:event_search_client_btnActionPerformed
+
+    private void check_out_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_check_out_btnActionPerformed
+        Check_Out window_6 = new Check_Out();
+        window_6.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_check_out_btnActionPerformed
 
     private void salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidaActionPerformed
         this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_salidaActionPerformed
 
-    private void cargaArcVentan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargaArcVentan1ActionPerformed
-        Home inicio = new Home();
-        inicio.setVisible(true);
+    private void search_reservation_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_reservation_btnActionPerformed
+        Search_Reservation window_3 = new Search_Reservation();
+        window_3.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_cargaArcVentan1ActionPerformed
+    }//GEN-LAST:event_search_reservation_btnActionPerformed
 
-    private void buscarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCliente1ActionPerformed
-        Search_Client buscarC = new Search_Client();
-        buscarC.setVisible(true);
+    private void search_room_history_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_room_history_btnActionPerformed
+        Historic_Room window_4 = new Historic_Room();
+        window_4.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_buscarCliente1ActionPerformed
+    }//GEN-LAST:event_search_room_history_btnActionPerformed
 
-    private void busquedaReservac1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaReservac1ActionPerformed
-        Search_Reservation buscarR =  new Search_Reservation();
-        buscarR.setVisible(true);
+    private void check_in_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_check_in_btnActionPerformed
+        Check_In window_5 = new Check_In();
+        window_5.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_busquedaReservac1ActionPerformed
-
-    private void historialReservActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historialReservActionPerformed
-        Historic_Room histHab =  new Historic_Room();
-        histHab.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_historialReservActionPerformed
-
-    private void checkIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkIn1ActionPerformed
-        Check_In checkIn = new Check_In();
-        checkIn.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_checkIn1ActionPerformed
+    }//GEN-LAST:event_check_in_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,20 +259,20 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buscarCliente1;
-    private javax.swing.JButton busquedaReservac1;
-    private javax.swing.JButton cargaArcVentan1;
-    private javax.swing.JButton checkIn1;
-    private javax.swing.JButton checkOut;
-    private javax.swing.JButton historialReserv;
-    private javax.swing.JLabel imagen;
-    private javax.swing.JLabel imagen1;
+    private javax.swing.JButton check_in_btn;
+    private javax.swing.JButton check_out_btn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton salida;
+    private javax.swing.JButton search_client_btn;
+    private javax.swing.JButton search_reservation_btn;
+    private javax.swing.JButton search_room_history_btn;
     // End of variables declaration//GEN-END:variables
 }

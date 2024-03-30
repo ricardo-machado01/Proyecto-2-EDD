@@ -6,7 +6,6 @@ import Classes.*;
 import Nodes.*;
 import Trees.*;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import javax.swing.JOptionPane;
 
@@ -18,10 +17,10 @@ public class Global {
     private static CHashtable clients = new CHashtable(1000);
     private static Tree_Reservations reservations = new Tree_Reservations();
     private static Tree_Rooms rooms = new Tree_Rooms();
-    private static File filePathReservations;
-    private static File filePathRooms;
-    private static File filePathStatus;
-    private static File filePathHistoric;
+    private static String filePathReservations = "/Users/nicolasplanas/Desktop/Proyecto 2/Booking_hotel - reservas.csv/";
+    private static String filePathRooms = "/Users/nicolasplanas/Desktop/Proyecto 2/Booking_hotel - habitaciones.csv";
+    private static String filePathHistoric = "/Users/nicolasplanas/Desktop/Proyecto 2/Booking_hotel - Histórico.csv";
+    private static String filePathStatus = "/Users/nicolasplanas/Desktop/Proyecto 2/Booking_hotel - estado.csv";
 
     /**
      * Este método lee el documento de tipo 'csv' de las reservaciones, crea instancias
@@ -33,8 +32,7 @@ public class Global {
         int cont = 0;
     
         try {
-            String filePath = Global.getFilePathReservations().getAbsolutePath();
-            BufferedReader br = new BufferedReader(new FileReader(filePath));
+            BufferedReader br = new BufferedReader(new FileReader(filePathReservations));
 
             while ((line = br.readLine()) != null) {
                 if (cont > 0) {
@@ -65,10 +63,8 @@ public class Global {
         int cont2 = 0;
         
         try {
-            String filePathHis = Global.getFilePathHistoric().getAbsolutePath();
-            String filePathRoo = Global.getFilePathRooms().getAbsolutePath();
-            BufferedReader br_historic = new BufferedReader(new FileReader(filePathHis));
-            BufferedReader br_rooms = new BufferedReader(new FileReader(filePathRoo));
+            BufferedReader br_historic = new BufferedReader(new FileReader(filePathHistoric));
+            BufferedReader br_rooms = new BufferedReader(new FileReader(filePathRooms));
 
             while ((line = br_rooms.readLine()) != null) {
                 List_Clients list = new List_Clients();
@@ -114,8 +110,7 @@ public class Global {
         String line = "";
         int cont = 0;
         try {
-            String filePathStat = Global.getFilePathStatus().getAbsolutePath();
-            BufferedReader br = new BufferedReader(new FileReader(filePathStat));
+            BufferedReader br = new BufferedReader(new FileReader(filePathStatus));
 
             while ((line = br.readLine()) != null) {
                 if (cont > 0) {
@@ -162,38 +157,5 @@ public class Global {
 
     public static CHashtable getClients() {
         return clients;
-    }
-    
-    public static File getFilePathReservations() {
-        return filePathReservations;
-    }
-    
-    public static File getFilePathRooms() {
-        return filePathRooms;
-    }
-    
-    public static File getFilePathHistoric() {
-        return filePathHistoric;
-    }
-
-    public static File getFilePathStatus() {
-        return filePathStatus;
-    }
-    
-    // MÉTODOS SET.
-    public static void setFilePathReservations(File filePathReservations) {
-        Global.filePathReservations = filePathReservations;
-    }
-
-    public static void setFilePathRooms(File filePathRooms) {
-        Global.filePathRooms = filePathRooms;
-    }
-
-    public static void setFilePathStatus(File filePathStatus) {
-        Global.filePathStatus = filePathStatus;
-    }
-
-    public static void setFilePathHistoric(File filePathHistoric) {
-        Global.filePathHistoric = filePathHistoric;
     }
 }

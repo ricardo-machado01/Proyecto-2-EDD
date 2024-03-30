@@ -15,16 +15,18 @@ public class Search_Reservation extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public Search_Reservation() {
+        initComponents();
         setTitle("Buscar Cliente");
-        setSize(1180, 460);
         setResizable(false);
         this.setLocationRelativeTo(null);
-        initComponents();
+        
         //los atributos de las columnas
         String ids[] = {"Tipo de habitación","Fecha de llegada","Fecha de salida","Nombre","Apellido","Cédula","Email","Género","Télefono"};
+        
         //se setteat los atributos a la tabla
         m1.setColumnIdentifiers(ids);
         jTable1.setModel(m1);
+        
         //se define el tamaño de las celdas
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(180);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(160);
@@ -48,17 +50,16 @@ public class Search_Reservation extends javax.swing.JFrame {
 
         menu = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        menu2 = new javax.swing.JButton();
-        buscarReservacion = new javax.swing.JButton();
-        JLabel5 = new javax.swing.JLabel();
         Jlabel1 = new javax.swing.JLabel();
-        ci = new javax.swing.JTextField();
+        id_input = new javax.swing.JTextField();
+        JLabel5 = new javax.swing.JLabel();
+        search_reservation_btn = new javax.swing.JButton();
+        back_to_menu_btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         menu.setBackground(new java.awt.Color(0, 51, 102));
         menu.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -66,58 +67,65 @@ public class Search_Reservation extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(1180, 460));
+        setMinimumSize(new java.awt.Dimension(1050, 500));
+        setPreferredSize(new java.awt.Dimension(1050, 518));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 75, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, -1));
 
-        jLabel4.setFont(new java.awt.Font("Vivaldi", 3, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Buscar Reservación");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Kubo Sans", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(75, 25, 0));
+        jLabel4.setText("BUSCAR RESERVACIÓN");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
 
-        menu2.setBackground(new java.awt.Color(51, 102, 255));
-        menu2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        menu2.setText("Ir al menú");
-        menu2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        menu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menu2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(menu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 150, 30));
-
-        buscarReservacion.setBackground(new java.awt.Color(51, 102, 255));
-        buscarReservacion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        buscarReservacion.setText("Buscar Reservación");
-        buscarReservacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buscarReservacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarReservacionActionPerformed(evt);
-            }
-        });
-        jPanel2.add(buscarReservacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 150, 30));
-
-        JLabel5.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        JLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        JLabel5.setText("Datos de la reservación:");
-        jPanel2.add(JLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 20));
-
-        Jlabel1.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        Jlabel1.setForeground(new java.awt.Color(51, 51, 51));
+        Jlabel1.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        Jlabel1.setForeground(new java.awt.Color(75, 25, 0));
         Jlabel1.setText("Cédula:");
-        jPanel2.add(Jlabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, 20));
+        getContentPane().add(Jlabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, 30));
 
-        ci.addActionListener(new java.awt.event.ActionListener() {
+        id_input.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ciActionPerformed(evt);
+                id_inputActionPerformed(evt);
             }
         });
-        jPanel2.add(ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 210, -1));
+        getContentPane().add(id_input, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 210, -1));
+
+        JLabel5.setFont(new java.awt.Font("Kubo Sans", 1, 18)); // NOI18N
+        JLabel5.setForeground(new java.awt.Color(75, 25, 0));
+        JLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLabel5.setText("Datos de la reservación:");
+        getContentPane().add(JLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, 20));
+
+        search_reservation_btn.setBackground(new java.awt.Color(75, 25, 0));
+        search_reservation_btn.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        search_reservation_btn.setForeground(new java.awt.Color(255, 248, 231));
+        search_reservation_btn.setText("Aceptar");
+        search_reservation_btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        search_reservation_btn.setOpaque(true);
+        search_reservation_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_reservation_btnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(search_reservation_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, 90, 30));
+
+        back_to_menu_btn.setBackground(new java.awt.Color(75, 25, 0));
+        back_to_menu_btn.setFont(new java.awt.Font("Kubo Sans", 1, 14)); // NOI18N
+        back_to_menu_btn.setForeground(new java.awt.Color(255, 248, 231));
+        back_to_menu_btn.setText("Volver al menú");
+        back_to_menu_btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        back_to_menu_btn.setOpaque(true);
+        back_to_menu_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_to_menu_btnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(back_to_menu_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 130, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,36 +137,31 @@ public class Search_Reservation extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 1050, 160));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 990, 160));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1100, 460));
-
-        jPanel4.setBackground(new java.awt.Color(51, 102, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel3.setBackground(new java.awt.Color(0, 51, 153));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 40, 460));
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Window_Search_Reservation.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarReservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarReservacionActionPerformed
+    private void search_reservation_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_reservation_btnActionPerformed
         try {
             //Se reinicia la tabla de busqueda si ya se buscó anteriormente alguna reservación
-            if(m1.getRowCount()!= 0){
+            if (m1.getRowCount()!= 0) {
                 while(m1.getRowCount() != 0){
                     m1.removeRow(0);
                 }
             }
-            int id = Integer.parseInt(ci.getText());
-            //se busca si la reservación existe
+            int id = Integer.parseInt(id_input.getText());
+            
+            // Se busca si la reservación existe.
             Node_Reservation search_input = Global.getReservations().search(id, Global.getReservations().getRoot());
-            //se retorna nuevamente a vacio el input
-            ci.setText("");
-            //se agregan los datos, si se encontraron, a la tabla
+            
+            // Se retorna nuevamente a vacio el input.
+            id_input.setText("");
+            
+            // Se agregan los datos, si se encontraron, a la tabla.
             m1.addRow(new Object[]{search_input.getReservation().getRoom_type(),search_input.getReservation().getArrival(),search_input.getReservation().getDeparture(),search_input.getReservation().getClient().getName(),search_input.getReservation().getClient().getLastname(),search_input.getReservation().getClient().getId(),search_input.getReservation().getClient().getEmail(),search_input.getReservation().getClient().getGender(),search_input.getReservation().getClient().getPhone()});
             
         } catch (NumberFormatException e) {
@@ -166,17 +169,17 @@ public class Search_Reservation extends javax.swing.JFrame {
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "Reservación no encontrada");
         }
-    }//GEN-LAST:event_buscarReservacionActionPerformed
+    }//GEN-LAST:event_search_reservation_btnActionPerformed
 
-    private void menu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu2ActionPerformed
+    private void back_to_menu_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_to_menu_btnActionPerformed
         Menu menu = new Menu();
         menu.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_menu2ActionPerformed
+    }//GEN-LAST:event_back_to_menu_btnActionPerformed
 
-    private void ciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciActionPerformed
+    private void id_inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_inputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ciActionPerformed
+    }//GEN-LAST:event_id_inputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,7 +207,6 @@ public class Search_Reservation extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Search_Reservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -217,16 +219,15 @@ public class Search_Reservation extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabel5;
     private javax.swing.JLabel Jlabel1;
-    private javax.swing.JButton buscarReservacion;
-    private javax.swing.JTextField ci;
+    private javax.swing.JButton back_to_menu_btn;
+    private javax.swing.JTextField id_input;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton menu;
-    private javax.swing.JButton menu2;
+    private javax.swing.JButton search_reservation_btn;
     // End of variables declaration//GEN-END:variables
 }

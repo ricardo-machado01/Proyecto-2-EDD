@@ -1,6 +1,7 @@
 package Trees;
 
 import Nodes.Node_Reservation;
+import javax.swing.JOptionPane;
 
 public class Tree_Reservations {
     private Node_Reservation root;
@@ -46,57 +47,54 @@ public class Tree_Reservations {
     
     /**
      * Este método elimina un nodo del arbol dado una key.
-     * @param idClient Key de nodo, en este caso el id del Cliente.
+     * @param id  Key de nodo, en este caso el id del Cliente.
      * @param pointer Nodo Raíz para recorrer el arbol.
      * @param pointerPrevious Nodo previo para poder reordenar el arbol.
      */
-    public void delete(int idClient, Node_Reservation pointer, Node_Reservation pointerPrevious) {
-        if (isEmpty() == false) {
-            if (idClient < pointer.getKey()) {
-                delete(idClient, pointer.getLeft(), pointer);
-            } else if (idClient > pointer.getKey()) {
-                delete(idClient, pointer.getRight(), pointer);
+    public void deleteNode(int id, Node_Reservation pointer, Node_Reservation pointerPrevious) {
+        if (isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No hay reservaciones actualmente.");
+        } else {
+            if (id < pointer.getKey()) {
+                deleteNode(id, pointer.getLeft(), pointer);
+            } else if (id > pointer.getKey()) {
+                deleteNode(id, pointer.getRight(), pointer);
             } else {
-                //CASO 1: NODO HOJA (NO TIENE HIJOS)
                 if (pointer.isLeaf()) {
-                    //Si es la raíz que se desea eliminar.
+                    // Cuando el nodo a eliminar es una hoja
                     if (pointerPrevious == null) {
                         setRoot(null);
-                    //Si no es la raíz que se desea eliminar.
                     } else {
-                        if (idClient < pointerPrevious.getKey()) {
+                        if (id < pointerPrevious.getKey()) {
                             pointerPrevious.setLeft(null);
                         } else {
                             pointerPrevious.setRight(null);
                         }
                     }
-                //CASO 2: SI TIENE UN SOLO HIJO.
-                } else if(pointer.hasLeftSon()) {
-                    //Si es la raíz que se desea eliminar.
-                    if (pointerPrevious == null){
+                } else if (pointer.hasOnlyLeftSon()) {
+                    // Cuando el nodo a eliminar tiene solo un hijo izq
+                    if (pointerPrevious == null) {
                         setRoot(pointer.getLeft());
-                    //Si no es la raíz que se desea eliminar.
                     } else {
-                        if (idClient < pointerPrevious.getKey()) {
+                        if (id < pointerPrevious.getKey()) {
                             pointerPrevious.setLeft(pointer.getLeft());
                         } else {
                             pointerPrevious.setRight(pointer.getLeft());
                         }
                     }
-                } else if(pointer.hasRightSon()) {
-                    //Si es la raíz que se desea eliminar.
+                }  else if (pointer.hasOnlyRightSon()) {
+                    // Cuando el nodo a eliminar tiene solo un hijo der
                     if (pointerPrevious == null) {
                         setRoot(pointer.getRight());
-                    //Si no es la raíz que se desea eliminar.
                     } else {
-                        if (idClient < pointerPrevious.getKey()) {
+                        if (id < pointerPrevious.getKey()) {
                             pointerPrevious.setLeft(pointer.getRight());
                         } else {
                             pointerPrevious.setRight(pointer.getRight());
                         }
                     }
-                //CASO 3: CUANDO EL NODO TIENE 2 HIJOS.
                 } else {
+                    // Cuando el nodo a eliminar tiene dos hijos
                     boolean hasRightSons = validateLeftSon(pointer.getLeft());
                     Node_Reservation temp = (hasRightSons) ? searchNodoToReplace(pointer.getLeft()) : pointer.getLeft();
                     if (pointerPrevious == null) {
@@ -106,7 +104,7 @@ public class Tree_Reservations {
                     } else {
                         temp.setLeft(pointer.getLeft());
                         temp.setRight(pointer.getRight());
-                        if (idClient < pointerPrevious.getKey()) {
+                        if (id < pointerPrevious.getKey()) {
                             pointerPrevious.setLeft(temp);
                         } else {
                             pointerPrevious.setRight(temp);
