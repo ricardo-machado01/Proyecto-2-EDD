@@ -17,10 +17,10 @@ public class Global {
     private static CHashtable clients = new CHashtable(1000);
     private static Tree_Reservations reservations = new Tree_Reservations();
     private static Tree_Rooms rooms = new Tree_Rooms();
-    private static String filePathReservations = "/Users/nicolasplanas/Desktop/Proyecto_2_EDD/Proyecto-2-EDD/Booking_hotel - reservas.csv/";
-    private static String filePathRooms = "/Users/nicolasplanas/Desktop/Proyecto_2_EDD/Proyecto-2-EDD/Booking_hotel - habitaciones.csv";
-    private static String filePathHistoric = "/Users/nicolasplanas/Desktop/Proyecto_2_EDD/Proyecto-2-EDD/Booking_hotel - historico.csv";
-    private static String filePathStatus = "/Users/nicolasplanas/Desktop/Proyecto_2_EDD/Proyecto-2-EDD/Booking_hotel - estado.csv";
+    private static String filePathReservations = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - reservas.csv/";
+    private static String filePathRooms = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - habitaciones.csv";
+    private static String filePathHistoric = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - historico.csv";
+    private static String filePathStatus = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - estado.csv";
 
     /**
      * Este método lee el documento de tipo 'csv' de las reservaciones, crea instancias

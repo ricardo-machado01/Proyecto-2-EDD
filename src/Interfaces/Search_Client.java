@@ -158,9 +158,8 @@ public class Search_Client extends javax.swing.JFrame {
                     m1.removeRow(0);
                 }
             }
-
-            String nam = name.getText().substring(0, 1).toUpperCase() + name.getText().substring(1).toLowerCase();
-            String lastnam = lastname.getText().substring(0, 1).toUpperCase() + lastname.getText().substring(1).toLowerCase();
+            String nam = name.getText();
+            String lastnam = lastname.getText();;
             //se busca al cliente
             Class_Reservation search_result = Global.getClients().searchClient(nam, lastnam);
             
@@ -173,7 +172,7 @@ public class Search_Client extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "¡Cliente no encontrado!");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error! Búsqueda fallida!");
+            JOptionPane.showMessageDialog(null, "Error! Búsqueda fallida!, verifique que haya escrito nombre y apellido del usuario de forma correcta");
         }
     }//GEN-LAST:event_search_client_btnActionPerformed
 
