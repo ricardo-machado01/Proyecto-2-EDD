@@ -5,15 +5,12 @@ import Main.Global;
 import Nodes.Node_Room;
 
 /**
- * Clase para crear árbol de habitaciones.
- * @author Nicolas Planas, Ricardo Machado, Andrea Rojas, Luciano Ruiz.
+ *
+ * @author nicolasplanas
  */
 public class Tree_Rooms {
      private Node_Room root;
 
-    /**
-     * Constructor del árbol de habitaciones.
-     */
     public Tree_Rooms() {
         this.root = null;
     }

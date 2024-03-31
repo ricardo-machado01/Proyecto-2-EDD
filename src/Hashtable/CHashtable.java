@@ -68,8 +68,8 @@ public class CHashtable {
     
     /**
      * Método para eliminar al cliente del Hash Table.
-     * @param id recibe id como cedula del cliente a buscar en el árbol Reservaciones.
-     * @return Retorna un Objeto de tipo Cliente.
+     * @param id
+     * @return 
      */
     public Class_Client checkInClient(int id) {
         Node_Reservation reservation = Global.getReservations().search(id, Global.getReservations().getRoot());
@@ -95,7 +95,7 @@ public class CHashtable {
      * Método para eliminar al cliente del Hash Table.
      * @param name Nombre del Cliente.
      * @param lastname Apellido del Cliente.
-     * @return Retorna un Objeto de tipo Cliente.
+     * @return 
      */
     public Class_Client checkOutClient(String name, String lastname) {
         
@@ -187,6 +187,7 @@ public class CHashtable {
     
     /**
      * Este método para imprimir el hashtable (solo para pruebas)
+     * @return Retorna la información de los clientes.
      */
     public void print(){
         for(int i = 0;i < getCapacity();i++){
