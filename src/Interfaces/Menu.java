@@ -42,9 +42,6 @@ public class Menu extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         check_out_btn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -161,29 +158,8 @@ public class Menu extends javax.swing.JFrame {
         });
         getContentPane().add(check_out_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, 210, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Menu-Window.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Window_Menu.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
-
-        jLabel3.setBackground(new java.awt.Color(255, 248, 231));
-        jLabel3.setFont(new java.awt.Font("Baskerville", 1, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 248, 231));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("TERRAVILA");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 290, -1));
-
-        jLabel4.setBackground(new java.awt.Color(255, 248, 231));
-        jLabel4.setFont(new java.awt.Font("Baskerville", 1, 48)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 248, 231));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("TERRAVILA");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 290, -1));
-
-        jLabel5.setBackground(new java.awt.Color(255, 248, 231));
-        jLabel5.setFont(new java.awt.Font("Baskerville", 1, 48)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 248, 231));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("TERRAVILA");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -263,9 +239,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton check_out_btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;

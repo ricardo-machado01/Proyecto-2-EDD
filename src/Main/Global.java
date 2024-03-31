@@ -17,10 +17,10 @@ public class Global {
     private static CHashtable clients = new CHashtable(1000);
     private static Tree_Reservations reservations = new Tree_Reservations();
     private static Tree_Rooms rooms = new Tree_Rooms();
-    private static String filePathReservations = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - reservas.csv";
-    private static String filePathRooms = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - habitaciones.csv";
-    private static String filePathHistoric = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - historico.csv";
-    private static String filePathStatus = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - estado.csv";
+    private static String filePathReservations = "/Users/nicolasplanas/Desktop/Proyecto_2_EDD/Proyecto-2-EDD/Booking_hotel - reservas.csv/";
+    private static String filePathRooms = "/Users/nicolasplanas/Desktop/Proyecto_2_EDD/Proyecto-2-EDD/Booking_hotel - habitaciones.csv";
+    private static String filePathHistoric = "/Users/nicolasplanas/Desktop/Proyecto_2_EDD/Proyecto-2-EDD/Booking_hotel - historico.csv";
+    private static String filePathStatus = "/Users/nicolasplanas/Desktop/Proyecto_2_EDD/Proyecto-2-EDD/Booking_hotel - estado.csv";
 
     /**
      * Este método lee el documento de tipo 'csv' de las reservaciones, crea instancias
@@ -46,7 +46,7 @@ public class Global {
             }
             br.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal con su archivo de reservaciones");
+            JOptionPane.showMessageDialog(null, "¡Ups, algo salio mal con su archivo de estado!");
         }
     }
 
@@ -97,7 +97,7 @@ public class Global {
             br_historic.close();
             br_rooms.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal con su archivo de historico o de habitaciones");
+            JOptionPane.showMessageDialog(null, "¡Ups, algo salio mal con su archivo de estado!");
         }
     }
 
@@ -126,13 +126,13 @@ public class Global {
                         Node_Client nc = new Node_Client(client);
                         
                         //si la lista tiene solo un cliente, la lista de roommates se resetea
-                        if(listRoommate.getSize() == 1 || listRoommate.getSize() == 0){
+                        if (listRoommate.getSize() == 1 || listRoommate.getSize() == 0) {
                             listRoommate.setHead(null);
                             listRoommate.setSize(0);
                             listRoommate.insertBegining(nc);
                         
                         //si la lista tiene más de un cliente
-                        }else if(listRoommate.getSize() > 1){
+                        } else if (listRoommate.getSize() > 1) {
                             //Se le settea la lista de roommates a los clientes que comparte una misma habitación en común, es decir, a los mismos clientes
                             //registrados en dicha lista
                             Node_Client pointer = listRoommate.getHead();
@@ -146,7 +146,7 @@ public class Global {
                             listRoommate.insertBegining(nc);
                         }
                     //si se detecta un cliente con habitación vacia se le asigna la habitación del cliente anterior y este se agrega a la lsita de roommates
-                    }else if("".equals(values[0])){
+                    }else if ("".equals(values[0])) {
                         Class_Client client = new Class_Client(null, values[1], values[2], values[3], values[4], values[5], roomNum, null); 
                         clients.addClientTable(client, values[6]);
                         Node_Client nc = new Node_Client(client);
@@ -157,7 +157,7 @@ public class Global {
             }
             br.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "¡Ups! Algo salio mal con su archivo de estado");
+            JOptionPane.showMessageDialog(null, "¡Ups, algo salio mal con su archivo de estado!");
         }
     }
     

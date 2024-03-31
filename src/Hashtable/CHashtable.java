@@ -164,12 +164,10 @@ public class CHashtable {
         
         int index = getHashIndex(name, lastname);
         Node_Reservation_List currentNode = clientTable[index];
-        //String searchResult = "";
         Class_Reservation searchResult = null;
         
         while (currentNode != null) {
             if (currentNode.getReservation().getClient().getName().equals(name) && currentNode.getReservation().getClient().getLastname().equals(lastname)) {
-                //searchResult += currentNode.getReservation().getClient().showInfoStatus() + "Llegada: " + currentNode.getReservation().getArrival();
                 searchResult = currentNode.getReservation();
             } currentNode = currentNode.getNext();
         }
@@ -183,30 +181,5 @@ public class CHashtable {
 
     public int getCapacity() {
         return capacity;
-    }
-    
-    /**
-     * Este método para imprimir el hashtable (solo para pruebas)
-     */
-    public void print(){
-        for(int i = 0;i < getCapacity();i++){
-            //recibo un node que es la cabeza de un linkedList
-            Node_Reservation_List node = getClientTable()[i];
-            //System.out.println(node == null);
-            if(node != null){
-                System.out.println("index:"+i);
-                while(node!= null){
-                    Class_Reservation client = node.getReservation();
-                    System.out.print("[ "+client.getClient().getRoomNumber()+","+client.getClient().getName()+","+client.getClient().getLastname()+",roommates: ");
-                    if(client.getClient().getRoommate() == null){
-                        System.out.println("null ]");
-                    }else{
-                        client.getClient().getRoommate().print();
-                        System.out.println(" ]");
-                    }
-                    node = node.getNext();
-                }
-            }
-        }
     }
 }

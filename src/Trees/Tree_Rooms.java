@@ -76,30 +76,7 @@ public class Tree_Rooms {
         Class_Room room = Global.getRooms().search(room_number, this.getRoot()).getRoom();
         room.setAvailability(true);
     }
-    
-    // METODO ARBOL NO DEGENERADO!!!
-    /*
-    public void addClientH(int[] numRooms, List_Clients clients){
 
-        root = insertClientH(numRooms,0,numRooms.length-1,clienth);
-    }
-    
-    // Metodo para agregar un cliente en habitaciones agarrando un arreglo
-    private NodeTree insertClientH(int[] numRooms, int start, int end, List clienth) {
-
-        if (start > end) {
-            return null;
-        }
-        // Obtener el elemento medio del arreglo y hacerlo raíz
-        int middle = (start + end) / 2;
-        NodeTree node = new NodeTree(numRooms[middle],ClientList(clienth,middle));
-        // Insertar subarbol izquierdo
-        node.setLeft(insertClientH(numRooms, start, middle - 1,clienth));
-        // Insertar subarbol derecho
-        node.setRight(insertClientH(numRooms, middle + 1,end,clienth));
-        return node;
-    }*/
- 
     // MÉTODO GET.
     public Node_Room getRoot() {
         return root;
