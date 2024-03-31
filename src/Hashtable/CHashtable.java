@@ -197,7 +197,13 @@ public class CHashtable {
                 System.out.println("index:"+i);
                 while(node!= null){
                     Class_Reservation client = node.getReservation();
-                    System.out.println("[ "+client.getClient().getRoomNumber()+","+client.getClient().getName()+","+client.getClient().getLastname()+",roommates: "+client.getClient().getRoommate()+" ]");
+                    System.out.print("[ "+client.getClient().getRoomNumber()+","+client.getClient().getName()+","+client.getClient().getLastname()+",roommates: ");
+                    if(client.getClient().getRoommate() == null){
+                        System.out.println("null ]");
+                    }else{
+                        client.getClient().getRoommate().print();
+                        System.out.println(" ]");
+                    }
                     node = node.getNext();
                 }
             }

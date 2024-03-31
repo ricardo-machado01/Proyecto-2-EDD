@@ -7,7 +7,9 @@ package Interfaces;
 
 import Classes.Class_Client;
 import Classes.Class_Reservation;
+import Lists.List_Clients;
 import Main.Global;
+import Nodes.Node_Client;
 import javax.swing.JOptionPane;
 
 /**
@@ -131,19 +133,22 @@ public class Check_Out extends javax.swing.JFrame {
             Class_Client searchResult = Global.getClients().checkOutClient(nam,lastnam);
             
             if (searchResult.getName().equals(nam) && (searchResult.getLastname().equals(lastnam))) {
-                //Si se logró con exitó el Check Out del usuario se pasa a hacer Check out de sus compañeros de cuarto
+                //Si se logró con exitó el Check Out del usuario se pasa a hacer Check out de sus compañeros de cuarto, si los tiene
                 if(client.getClient().getRoommate() != null){
-                    String[] roommates = client.getClient().getRoommate().split(",");
-                    for (int i = 0; i < roommates.length; i++) {
-                        String[] mate = roommates[i].split(" ");
-                        Class_Client result = Global.getClients().checkOutClient(mate[0],mate[1]);
-                    }
+                    List_Clients roommates = client.getClient().getRoommate();
+                    Node_Client mate = roommates.getHead();
+                    while(mate != null){
+                        if(!mate.getClient().getName().equals(nam) && !mate.getClient().getLastname().equals(lastnam)){
+                            Global.getClients().checkOutClient(mate.getClient().getName(),mate.getClient().getLastname());
+                        }
+                        mate = mate.getNext();
+                    }   
                 }
                 //se cambia el estado de la habitación a desocupado
                 int room_number = Integer.parseInt(searchResult.getRoomNumber());
                 Global.getRooms().setAvailable(room_number);
                 if(client.getClient().getRoommate() != null){
-                    JOptionPane.showMessageDialog(null, "El cliente " + searchResult.getName() + " " + searchResult.getLastname() + " fue añadido al historial de habitación y eliminado de los hospedados con éxito junto a sus compañeros de cuarto");
+                    JOptionPane.showMessageDialog(null, "El cliente " + searchResult.getName() + " " + searchResult.getLastname() + " fue añadido al historial de habitación y eliminado de los hospedados con éxito junto a sus compañeros de cuarto"+client.getClient().getRoommate().printRoommates(nam,lastnam));
                 }else{
                     JOptionPane.showMessageDialog(null, "El cliente " + searchResult.getName() + " " + searchResult.getLastname() + " fue añadido al historial de habitación y eliminado de los hospedados con éxito");
                 }

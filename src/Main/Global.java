@@ -109,9 +109,6 @@ public class Global {
     public static void cvsReaderHash() {
         String line = "";
         String roomNum = "";
-        String roommates = "";
-        String mates = "";
-        String client_name = "";
         int cont = 0;
         try {
             BufferedReader br = new BufferedReader(new FileReader(filePathStatus));
@@ -136,40 +133,14 @@ public class Global {
                         
                         //si la lista tiene más de un cliente
                         }else if(listRoommate.getSize() > 1){
-                            //Se leen lo compañeros para crear un String con los nombres de los clientes que comparte un habitación en común
+                            //Se le settea la lista de roommates a los clientes que comparte una misma habitación en común, es decir, a los mismos clientes
+                            //registrados en dicha lista
                             Node_Client pointer = listRoommate.getHead();
+                            List_Clients copy = listRoommate;
                             while(pointer != null){
-                                if(pointer.getNext() == null){
-                                    roommates += pointer.getClient().getName()+" "+pointer.getClient().getLastname();
-                                }else{
-                                    roommates += pointer.getClient().getName()+" "+pointer.getClient().getLastname()+",";
-                                }
+                                pointer.getClient().setRoommate(copy);
                                 pointer = pointer.getNext();
                             }
-                            String[] mateslist = roommates.split(",");
-                            pointer = listRoommate.getHead();
-                            
-                            //Se agrega a lista de roommates a cada uno de los clientes, sin incluirlo a él mismo en la fila
-                            while(pointer != null){
-                                client_name = pointer.getClient().getName()+" "+pointer.getClient().getLastname();
-                                for (int i = 0; i < (mateslist.length); i++) {
-                                    if(!client_name.equals(mateslist[i])){
-                                        if(i == (mateslist.length)-1){
-                                            mates += mateslist[i];
-                                        }else if(client_name.equals(mateslist[i+1]) && (i+1) == (mateslist.length-1)){
-                                            mates += mateslist[i];
-                                        }else{
-                                            mates += mateslist[i]+",";
-                                        } 
-                                        
-                                    }
-                                }
-                                pointer.getClient().setRoommate(mates);
-                                client_name = "";
-                                mates = "";
-                                pointer = pointer.getNext();
-                            }
-                            roommates = "";
                             //se reinicia la lista y se inserta el cliente que se leyó que tiene una habitación distinta
                             listRoommate = new List_Clients();
                             listRoommate.insertBegining(nc);

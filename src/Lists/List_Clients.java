@@ -51,4 +51,37 @@ public class List_Clients {
     public boolean isEmpty() {
         return peak == null;
     }
+    
+    /**
+     * Este método para imprimir la lista (solo para pruebas)
+     */
+    public void print(){
+        Node_Client pointer = getHead();
+        while(pointer != null){
+            if(pointer.getNext() ==  null){
+                System.out.print(pointer.getClient().getName()+" "+pointer.getClient().getLastname());
+            }else{
+                System.out.print(pointer.getClient().getName()+" "+pointer.getClient().getLastname()+",");
+            }
+            pointer = pointer.getNext();
+        }
+    }
+    
+    /**
+     * Este método para imprimir a los roommates para el checkOut, para saber quienes estaban en la misma habitación con ese cliente
+     */
+    public String printRoommates(String name, String lastname){
+        String result = "";
+        Node_Client pointer = getHead();
+        while(pointer != null){
+            if(!pointer.getClient().getName().equals(name) && !pointer.getClient().getLastname().equals(lastname))
+                if(pointer.getNext() ==  null){
+                    result += pointer.getClient().getName()+" "+pointer.getClient().getLastname();
+                }else{
+                    result += pointer.getClient().getName()+" "+pointer.getClient().getLastname()+",";
+                }
+                pointer = pointer.getNext();
+        }
+        return result;
+    }
 }
