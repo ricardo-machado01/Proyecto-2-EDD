@@ -17,10 +17,10 @@ public class Global {
     private static CHashtable clients = new CHashtable(1000);
     private static Tree_Reservations reservations = new Tree_Reservations();
     private static Tree_Rooms rooms = new Tree_Rooms();
-    private static String filePathReservations = "C:\\Users\\Ricardo Machado\\Documents\\Documentos UNIMET\\Trimestre VIII\\Proyecto-2-EDD\\Proyecto-2-EDD\\Booking_hotel - reservas.csv";
-    private static String filePathRooms = "C:\\Users\\Ricardo Machado\\Documents\\Documentos UNIMET\\Trimestre VIII\\Proyecto-2-EDD\\Proyecto-2-EDD\\Booking_hotel - habitaciones.csv";
-    private static String filePathHistoric = "C:\\Users\\Ricardo Machado\\Documents\\Documentos UNIMET\\Trimestre VIII\\Proyecto-2-EDD\\Proyecto-2-EDD\\Booking_hotel - historico.csv";
-    private static String filePathStatus = "C:\\Users\\Ricardo Machado\\Documents\\Documentos UNIMET\\Trimestre VIII\\Proyecto-2-EDD\\Proyecto-2-EDD\\Booking_hotel - estado.csv";
+    private static String filePathReservations = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - reservas.csv";
+    private static String filePathRooms = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - habitaciones.csv";
+    private static String filePathHistoric = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - historico.csv";
+    private static String filePathStatus = "\\Users\\pjroj\\OneDrive\\Documents\\GitHub\\Proyecto-2-EDD\\Booking_hotel - estado.csv";
 
     /**
      * Este método lee el documento de tipo 'csv' de las reservaciones, crea instancias

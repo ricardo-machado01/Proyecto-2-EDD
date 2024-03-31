@@ -27,7 +27,7 @@ public class Historic_Room extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         //los atributos de las columnas
-        String ids[] = {"Cédula","Nombre","Apellido","Email","Género","Llegada del Cliente"};
+        String ids[] = {"Cédula","Nombre","Apellido","Email","Género"};
         
         //se setteat los atributos a la tabla
         m1.setColumnIdentifiers(ids);
@@ -39,7 +39,7 @@ public class Historic_Room extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(2).setPreferredWidth(200);
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(300);
         jTable1.getColumnModel().getColumn(4).setPreferredWidth(120);
-        jTable1.getColumnModel().getColumn(5).setPreferredWidth(200);
+        //jTable1.getColumnModel().getColumn(5).setPreferredWidth(200);
     }
 
     /**
@@ -178,11 +178,12 @@ public class Historic_Room extends javax.swing.JFrame {
             
             //Si existe el nodo encontrado se le busca su historial de clientes que se hospedaron 
             Node_Client aux = room.getRoom().getClientHistory().getHead();
+            
             while (aux != null) {
                 if(aux.getClient().getId() == null){
-                    m1.addRow(new Object[]{" - ",aux.getClient().getName(),aux.getClient().getLastname(),aux.getClient().getEmail(),aux.getClient().getGender(),"falta info"});
+                    m1.addRow(new Object[]{" - ",aux.getClient().getName(),aux.getClient().getLastname(),aux.getClient().getEmail(),aux.getClient().getGender()});
                 }else{
-                   m1.addRow(new Object[]{aux.getClient().getId(),aux.getClient().getName(),aux.getClient().getLastname(),aux.getClient().getEmail(),aux.getClient().getGender(),"falta info"});
+                   m1.addRow(new Object[]{aux.getClient().getId(),aux.getClient().getName(),aux.getClient().getLastname(),aux.getClient().getEmail(),aux.getClient().getGender()});
                 }
                 aux = aux.getNext();
             }
