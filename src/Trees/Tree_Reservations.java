@@ -3,16 +3,23 @@ package Trees;
 import Nodes.Node_Reservation;
 import javax.swing.JOptionPane;
 
+/**
+ * Clase para crear árbol de reservaciones.
+ * @author Nicolas Planas, Ricardo Machado, Andrea Rojas, Luciano Ruiz.
+ */
 public class Tree_Reservations {
     private Node_Reservation root;
 
+    /**
+     * Constructor del árbol de reservaciones.
+     */
     public Tree_Reservations() {
         this.root = null;
     }
     
     /**
      * Este método se encarga de insertar un nodo dentro del árbol a traves de la recursividad.
-     * @param reservation 
+     * @param reservation Nodo reservación que se desea insertar en el árbol.
      */
     public void insertar(Node_Reservation reservation) {
         
@@ -25,10 +32,10 @@ public class Tree_Reservations {
     }
     
     /**
-     * Este metodo lo hizo ricky!
-     * @param id
-     * @param nodo
-     * @return 
+     * Busca una reservación dado la id del cliente.
+     * @param id cedula del cliente que hizo la reservación.
+     * @param nodo Nodo raíz del árbol.
+     * @return Retorna el nodo de la reservación del cliente deseado.
      */
     public Node_Reservation search(int id, Node_Reservation nodo){
         if (isEmpty()) {

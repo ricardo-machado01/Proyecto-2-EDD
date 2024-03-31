@@ -10,17 +10,17 @@ import java.io.FileReader;
 import javax.swing.JOptionPane;
 
 /**
- * Clase para crear un objeto de tipo global.
- * @author nicolasplanas
+ * Clase Global del Proyecto. Se encarga de cargar automaticamente los archivos "csv".
+ * @author Nicolas Planas, Ricardo Machado, Andrea Rojas, Luciano Ruiz.
  */
 public class Global {
     private static CHashtable clients = new CHashtable(1000);
     private static Tree_Reservations reservations = new Tree_Reservations();
     private static Tree_Rooms rooms = new Tree_Rooms();
-    private static String filePathReservations = "\\Users\\pjroj\\OneDrive\\Documents\\Booking_hotel - reservas.csv";
-    private static String filePathRooms = "\\Users\\pjroj\\OneDrive\\Documents\\Booking_hotel - habitaciones.csv";
-    private static String filePathHistoric = "\\Users\\pjroj\\OneDrive\\Documents\\Booking_hotel - Histórico.csv";
-    private static String filePathStatus = "\\Users\\pjroj\\OneDrive\\Documents\\Booking_hotel - estado2.csv";
+    private static String filePathReservations = "C:\\Users\\Ricardo Machado\\Documents\\Documentos UNIMET\\Trimestre VIII\\Proyecto-2-EDD\\Proyecto-2-EDD\\Booking_hotel - reservas.csv";
+    private static String filePathRooms = "C:\\Users\\Ricardo Machado\\Documents\\Documentos UNIMET\\Trimestre VIII\\Proyecto-2-EDD\\Proyecto-2-EDD\\Booking_hotel - habitaciones.csv";
+    private static String filePathHistoric = "C:\\Users\\Ricardo Machado\\Documents\\Documentos UNIMET\\Trimestre VIII\\Proyecto-2-EDD\\Proyecto-2-EDD\\Booking_hotel - historico.csv";
+    private static String filePathStatus = "C:\\Users\\Ricardo Machado\\Documents\\Documentos UNIMET\\Trimestre VIII\\Proyecto-2-EDD\\Proyecto-2-EDD\\Booking_hotel - estado.csv";
 
     /**
      * Este método lee el documento de tipo 'csv' de las reservaciones, crea instancias

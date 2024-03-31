@@ -18,7 +18,7 @@ public class Node_Room_List {
 
     /**
      * Constructor de la clase Node_Room_List.
-     * @param room 
+     * @param room Objeto de tipo Room que pertenece como elemento para el nodo.
      */
     public Node_Room_List(Class_Room room) {
         this.room = room;
